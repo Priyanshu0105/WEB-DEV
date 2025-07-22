@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api</title>
+</head>
+<body style="background-color: #212121;">
+    <h2 style="color: aliceblue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cum architecto vitae earum corrupti officiis labore id totam fugit accusantium? Est, earum tempore ut veniam culpa voluptatum maiores repellat magnam?</h2>
+</body>
+<script>
+    const reqUrl = 'https://api.github.com/users/Priyanshu0105';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',reqUrl);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(data.avatar_url);
+        }
+    }
+
+    xhr.send()
+</script>
+</html>
