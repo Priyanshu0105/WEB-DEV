@@ -66,3 +66,15 @@ const promiseFive = new Promise(function(resolve , reject){
 
     } , 1000)
 })
+
+async function consumePromiseFive() {
+    const response = await promiseFive
+    console.log(response);
+    
+}
+
+consumePromiseFive();
+
+async function gau(){
+    const response = await fetch('')
+}
