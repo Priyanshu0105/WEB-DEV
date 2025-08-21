@@ -46,4 +46,24 @@ scene.add(camera)
 const canvas = document.querySelector(".draw"); //select the canvas element
 const renderer = new THREE.WebGLRenderer({canvas}); //add the WebGL renderer
 renderer.setSize(aspect.width , aspect.height); //Renderer size
-renderer.render(scene,camera) // display what the camera in the scene captured
+ // display what the camera in the scene captured
+
+ //Clock Class
+ const clock = new THREE.Clock()
+//animate
+
+const animate = () => {
+    // Get Elapsed Time
+    const elapsedTime = clock.getElapsedTime();
+    console.log(elapsedTime)
+    mesh.rotation.x = elapsedTime ;
+    mesh.position.x +=0.01;
+    mesh2.rotation.z += 0.02;
+    camera.position.x += 0.01;
+    camera.position.z +=0.01;
+    renderer.render(scene,camera)
+    window.requestAnimationFrame(animate);
+}
+animate();
+
+//function will get called 60 times per second on some devices and 120 times on others  0.01 x 60 = 0.6 on X || 0.01 x 120 = 1.2 on X
