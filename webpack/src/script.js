@@ -1,7 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
 import {
-  MapControls,
   OrbitControls,
 } from "three/examples/jsm/controls/OrbitControls";
 
@@ -33,7 +32,20 @@ loadingManager.onError = () => {
 const textureLoader = new THREE.TextureLoader(loadingManager);
 const colorTexture = textureLoader.load("/texture/color.jpg");
 const bumpTexture = textureLoader.load("/texture/bump.jpg")
-const displacementTexture = textureLoader.load("texture/displacementMap.jpg")
+// const displacementTexture = textureLoader.load("texture/displacementMap.jpg")
+
+const cubeTextureLoader = new THREE.CubeTextureLoader();
+const env = cubeTextureLoader.load([
+  "/texture/env/px.png" ,
+  "/texture/env/nx.png" ,
+  "/texture/env/py.png" ,
+  "/texture/env/ny.png" ,
+  "/texture/env/pz.png" ,
+  "/texture/env/nz.png" ,
+  
+])
+scene.background = env;
+// const matcapload = textureLoader.load("texture/mat3.png")
 
 //----------------------------------------Resizing-------------------------------------
 window.addEventListener("resize", () => {
@@ -51,17 +63,19 @@ window.addEventListener("resize", () => {
 });
 
 //------------------------------------------Mesh-----------------------------------------
-const geometry = new THREE.SphereBufferGeometry( 15, 16 , 164, 164 );
+const geometry = new THREE.SphereBufferGeometry(15, 164 , 164);
 const material = new THREE.MeshStandardMaterial();
-material.map = colorTexture 
+// material.map = colorTexture 
 // material.transparent = true 
 // material.opacity = 0.4 
 material.side = THREE.DoubleSide
 
-material.bumpMap = bumpTexture; 
-material.bumpScale = 5;
-material.metalness = 0.3
-material.roughness = 0.4
+// material.bumpMap = bumpTexture; 
+// material.bumpScale = 5;
+material.metalness = 0.9
+material.roughness = 0.1
+material.envMap= env;
+// material.map = matcapload;
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
