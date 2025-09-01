@@ -30,9 +30,9 @@ loadingManager.onError = () => {
 
 //--------------------------------------textureLoader---------------------------------
 const textureLoader = new THREE.TextureLoader(loadingManager);
-const colorTexture = textureLoader.load("/texture/color.jpg");
-const bumpTexture = textureLoader.load("/texture/bump.jpg")
-// const displacementTexture = textureLoader.load("texture/displacementMap.jpg")
+// const colorTexture = textureLoader.load("/texture/color.jpg");
+// const bumpTexture = textureLoader.load("/texture/bump.jpg")
+// // const displacementTexture = textureLoader.load("texture/displacementMap.jpg")
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 const env = cubeTextureLoader.load([
@@ -63,21 +63,26 @@ window.addEventListener("resize", () => {
 });
 
 //------------------------------------------Mesh-----------------------------------------
-const geometry = new THREE.SphereBufferGeometry(15, 164 , 164);
+const geometry = new THREE.SphereBufferGeometry(15, 164, 164);
 const material = new THREE.MeshStandardMaterial();
-// material.map = colorTexture 
-// material.transparent = true 
-// material.opacity = 0.4 
+// // material.map = colorTexture 
+// // material.transparent = true 
+// // material.opacity = 0.4 
 material.side = THREE.DoubleSide
 
-// material.bumpMap = bumpTexture; 
-// material.bumpScale = 5;
-material.metalness = 0.9
+// // material.bumpMap = bumpTexture; 
+// // material.bumpScale = 5;
+material.metalness = 1
 material.roughness = 0.1
 material.envMap= env;
-// material.map = matcapload;
+// // material.map = matcapload;
+
+// const geometry = new THREE.PlaneBufferGeometry(1,1);
+// const material = new THREE.PointsMaterial()
+// const points = new THREE.Points(geometry,material);
 const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
+scene.add(mesh)
+// scene.add(points);
 
 //-----------------------------------------Camera----------------------------------------
 const aspect = {
@@ -85,7 +90,7 @@ const aspect = {
   height: window.innerHeight,
 };
 const camera = new THREE.PerspectiveCamera(75, aspect.width / aspect.height);
-camera.position.z = 40;
+camera.position.z = 5;
 scene.add(camera);
 
 //-----------------------------------------Renderer--------------------------------------
@@ -107,7 +112,7 @@ const animate = () => {
 
   //--------------------------------------Update Controls--------------------------------
   orbitControls.update();
-  mesh.rotation.y +=0.01;
+  // mesh.rotation.y +=0.01;
 
   //-----------------------------------------Renderer------------------------------------
   renderer.render(scene, camera);
