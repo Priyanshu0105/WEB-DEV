@@ -24,6 +24,8 @@ app.get("/users" , (req, res)=>{
     res.send(html); 
 })
 app.get("/api/users" , (req , res) => {
+    res.setHeader("X-MyName" , "Priyanshu") //Custom Header
+    console.log(req.headers)
     return res.json(users)
 })
 app.route("/api/users/:id")
