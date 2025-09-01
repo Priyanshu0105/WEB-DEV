@@ -8,4 +8,9 @@
  1756748101064 : GET : ::1 : /api/users 
  1756748153330 : GET : ::1 : /api/users 
  1756748194816 : GET : ::1 : /api/users 
- 1756748238825 : GET : ::1 : /api/users
+ 1756748238825 : GET : ::1 : /api/users 
+ 1756749859742 : GET : ::1 : /api/users 
+ 1756749878081 : POST : ::1 : /api/users 
+ 1756751510532 : POST : ::1 : /api/users 
+ 1756751863613 : POST : ::1 : /api/users 
+ 1756752243368 : GET : ::1 : /api/users/40000
