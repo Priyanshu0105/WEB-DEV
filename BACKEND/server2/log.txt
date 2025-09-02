@@ -13,4 +13,18 @@
  1756749878081 : POST : ::1 : /api/users 
  1756751510532 : POST : ::1 : /api/users 
  1756751863613 : POST : ::1 : /api/users 
- 1756752243368 : GET : ::1 : /api/users/40000
+ 1756752243368 : GET : ::1 : /api/users/40000 
+ 1756836539557 : GET : ::1 : /api/users/40000 
+ 1756836621447 : POST : ::1 : /api/users 
+ 1756836744529 : POST : ::1 : /api/users 
+ 1756837093745 : POST : ::1 : /api/users 
+ 1756837337241 : GET : ::1 : /api/users 
+ 1756837364674 : GET : ::1 : /users 
+ 1756837402413 : GET : ::1 : /users 
+ 1756837527056 : GET : ::1 : /api/users 
+ 1756837674554 : GET : ::1 : /api/users/68b7338866b60f015ae09088 
+ 1756837839920 : GET : ::1 : /api/users/68b7338866b60f015ae09088 
+ 1756837843991 : PATCH : ::1 : /api/users/68b7338866b60f015ae09088 
+ 1756837853591 : GET : ::1 : /api/users/68b7338866b60f015ae09088 
+ 1756837913462 : DELETE : ::1 : /api/users/68b7338866b60f015ae09088 
+ 1756837920972 : GET : ::1 : /api/users
